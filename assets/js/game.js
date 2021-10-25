@@ -10,6 +10,7 @@ var enemyName = "Roborto";
 var enemyHealth = "50";
 var enemyAttack = "12";
 
+// fight function
 var fight = function() {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
@@ -17,14 +18,11 @@ var fight = function() {
     // Gives the option to skip or fight
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
   
-    // Log message to see if skip worked
-    console.log(promptFight);
     // if player chooses to fight, then fight
     if (promptFight === "fight" || promptFight === "FIGHT") {
         //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
         enemyHealth = enemyHealth - playerAttack;
-
-        // Log a resulting message to the console so we know that it worked.
+        // Log a resulting message to the console so we know that it worked
         console.log(
             playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining. "
         );
@@ -39,8 +37,7 @@ var fight = function() {
 
         // Subtract the value of `enemyAttack` from the value of `playerHealth` and use that result to update the value in the `playerHealth` variable.
         playerHealth = playerHealth - enemyAttack;
-
-        // Log a resulting message to the console so we know that it worked.
+        // Log a resulting message to the console so we know that it worked
         console.log(
             enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining. "
         );
@@ -52,7 +49,8 @@ var fight = function() {
         else {
         window.alert(playerName + " still has " + playerHealth + " health left.");
         }
-        // if player chooses to skip
+
+    // if player chooses to skip
     } else if (promptFight === "skip" || promptFight === "SKIP") {
         // confirm player wants to skip
         var confirmSkip = window.confirm("Are you sure you'd like to quit?");
@@ -72,4 +70,5 @@ var fight = function() {
     }
   };
 
+  // run fight function to start game
 fight();
